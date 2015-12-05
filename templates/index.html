@@ -1,1 +1,11 @@
-<p> Hello World, now is <strong>{{ now }}</strong></p>
+{% extends "base.html" %}
+
+{% block title %} Index Page {% endblock %}
+
+{% block page_content %}
+  <div class="row">
+    <div class="col-md-12">
+     <p> Hello World, now is <strong> {{ now }} </strong></p>
+   </div>
+  </div>
+{% endblock %}
