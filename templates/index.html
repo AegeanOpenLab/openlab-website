@@ -27,7 +27,7 @@
                 <li>id: {{ post.id }} </li>
                 <li>title: {{ post.title }} </li>
                 <li>body: {{ post.body }} </li>
-                <li>link with single-object title: <a href="{{ url_for('single_post', id=post.id )}}"> {{ post.title }} </a></li>
+                <li>link with single-object title: [<a href="{{ url_for('single_post', id=post.id )}}"> {{ post.title }} </a>]</li>
               </ul>
             </li>
           </ul>
