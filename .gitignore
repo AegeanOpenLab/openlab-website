@@ -1,5 +1,6 @@
 # Local - Dev
-opelanb-venv/
+openlab-venv/
+*.db
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
