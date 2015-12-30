@@ -5,24 +5,26 @@
 {% block page_content %}
   <div class="row">
     <div class="col-md-12">
+      <p> User visiting this page: <strong> {{ current_user }} </strong></p>
+    </div>
+    <div class="col-md-12">
      <p> Time is: <strong> {{ now }} </strong></p>
      <hr>
    </div>
    <div class="col-md-12">
     <p>
       <span>Query Result: </span> {{ posts }}<br>
-        <sub>
-          [<a class="text-success" href="{{ url_for('add_post') }}">add Post</a>]
-        </sub>
       <hr>
       <span>Loop Query: </span>
         {% for post in posts %}
           <ul>
             <li> Object: {{ post }}
+              {% if current_user.is_authenticated %}
                 <sup>
                   [<a class="text-warning" href="{{ url_for('edit_post', id=post.id) }}">edit</a>]
                   [<a class="text-danger" href="{{ url_for('delete_post', id=post.id )}}">delete</a>]
                 </sup>
+              {% endif %}
               <ul>
                 <li>id: {{ post.id }} </li>
                 <li>title: {{ post.title }} </li>
